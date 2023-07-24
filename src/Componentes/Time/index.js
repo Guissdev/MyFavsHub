@@ -14,6 +14,7 @@ const Time = (props) => {
                  nome={colaborador.nome} 
                  cargo={colaborador.cargo} 
                  imagem={colaborador.imagem}
+                 onDelete={() => props.onDeleteColaborador(colaborador.nome)}
                  />)}
             </div>
         </section>

@@ -26,10 +26,17 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar seu card</h2>
+                <ListaSuspensa 
+                    obrigatorio={true} 
+                    label="Tipo" 
+                    itens={props.times}
+                    valor={time}
+                    aoAlterado={valor => setTipo(valor)}
+                />
                 <CampoTexto
                     obrigatorio={true} 
                     label="Nome" 
-                    placeholder="Digite seu nome" 
+                    placeholder="Digite o nome" 
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}
                 />
@@ -39,13 +46,7 @@ const Formulario = (props) => {
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                 />
-                <ListaSuspensa 
-                    obrigatorio={true} 
-                    label="Tipo" 
-                    itens={props.times}
-                    valor={time}
-                    aoAlterado={valor => setTipo(valor)}
-                />
+                
                 <Botao>
                     Criar Card
                 </Botao>
